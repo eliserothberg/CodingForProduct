@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coding For Product</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+  
+    function linkInConsole() {
+
+      var titlePair = {
+        title: 'really, really, really long title that will be chopped off',
+        link: 'example.com'
+      }
+      var text = titlePair.title;
+      var linkTo = titlePair.link;
+
+      if (text.length >= 50) {
+        text = text.substring(0, 49) + "...";
+      };
+
+      var result = text.link(linkTo);
+      console.log(result);
+    }
+
+    linkInConsole();
+
+    console.log("______________________")
+
+    titleLinkArray = [{
+      title: 'Github',
+      link: 'https://github.com'
+    }, {
+      title: 'Google',
+      link: 'https://google.com'
+    }, {
+      title: 'really, really, really long title that will be chopped off',
+      link: 'example.com'
+    }]
+
+    function allLinksInConsole() {
+      for (i = 0; i < titleLinkArray.length; i++) {
+
+        var text = titleLinkArray[i].title;
+        var linkTo = titleLinkArray[i].link;
+
+        if (text.length >= 50) {
+          text = text.substring(0, 49) + "...";
+        };
+
+        var result = text.link(linkTo);
+        console.log(result);
+      }
+
+    }
+
+    allLinksInConsole();
+
+    function linkPrint() {
+      for (i = 0; i < titleLinkArray.length; i++) {
+
+        var theLink = document.createElement("a");
+        theLink.href = titleLinkArray[i].link;
+        theLink.text = titleLinkArray[i].title + '\n';
+
+
+        if (theLink.text.length >= 50) {
+          theLink.text = titleLinkArray[i].title.substring(0, 49) + "...";
+        };
+
+        document.getElementsByTagName("body")[0].appendChild(theLink);
+      };
+    };
+
+    linkPrint();
+  
+  </script>
+</body>
+
+</html>
