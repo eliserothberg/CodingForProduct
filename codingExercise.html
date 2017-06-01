@@ -14,10 +14,10 @@
         link: 'example.com'
       }
   
-    function linkInConsole(titlePair) {
+    function linkInConsole(pairToLink) {
 
-      var text = titlePair.title;
-      var linkTo = titlePair.link;
+      var text = pairToLink.title;
+      var linkTo = pairToLink.link;
 
       if (text.length >= 50) {
         text = text.substring(0, 49) + "...";
