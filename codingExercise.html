@@ -8,13 +8,14 @@
 <body>
 
   <script type="text/javascript">
-  
-    function linkInConsole() {
 
-      var titlePair = {
+   var titlePair = {
         title: 'really, really, really long title that will be chopped off',
         link: 'example.com'
       }
+  
+    function linkInConsole(titlePair) {
+
       var text = titlePair.title;
       var linkTo = titlePair.link;
 
@@ -26,7 +27,7 @@
       console.log(result);
     }
 
-    linkInConsole();
+    linkInConsole(titlePair);
 
     console.log("______________________")
 
@@ -42,20 +43,10 @@
     }]
 
     function allLinksInConsole() {
-      for (i = 0; i < titleLinkArray.length; i++) {
-
-        var text = titleLinkArray[i].title;
-        var linkTo = titleLinkArray[i].link;
-
-        if (text.length >= 50) {
-          text = text.substring(0, 49) + "...";
-        };
-
-        var result = text.link(linkTo);
-        console.log(result);
-      }
-
-    }
+      for (i=0; i < titleLinkArray.length; i++) {
+        linkInConsole(titleLinkArray[i]);
+      };
+    };
 
     allLinksInConsole();
 
